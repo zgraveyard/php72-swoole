@@ -67,6 +67,7 @@ It has the following modules:
 1. SPL  
 1. sqlite3  
 1. standard 
+1. swoole
 1. tokenizer  
 1. xdebug 
 1. xml  
