@@ -1,4 +1,4 @@
-FROM php:fpm-alpine3.7
+FROM php:alpine3.7
 
 ARG BUILD_DATE
 ARG VCS_REF
@@ -19,9 +19,10 @@ LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
       org.label-schema.name="zaherg/php72-swoole" \
       org.label-schema.description="Lightweight php 7.2 container based on alpine with xDebug enabled, composer installed and swoole pecl installed." \
       org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.version="1.2.3" \
       org.label-schema.vcs-url="https://github.com/linuxjuggler/php72-swoole.git" \
       org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.schema-version="1.0.0"
+      org.label-schema.docker.schema-version="1.0"
 
 RUN set -ex \
   	&& apk update \
@@ -44,4 +45,4 @@ COPY xdebug.ini /usr/local/etc/php/conf.d/xdebug-dev.ini
 USER www-data
 
 WORKDIR /var/www
-CMD ["php-fpm"]
+CMD ["php", "-a"]
