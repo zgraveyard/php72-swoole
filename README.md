@@ -24,7 +24,7 @@ PHP_XDEBUG_PROFILER_OUTPUT_DIR=/tmp
 Then run the docker and specify the env file that you have created like this
 
 ```
-docker run --env-file .env -p 80:80 zaherg/php-7.2-xdebug-alpine
+docker run --env-file .env zaherg/php72-swoole:cli
 ```
 
 ## Installed modules information
