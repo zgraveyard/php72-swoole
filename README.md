@@ -1,25 +1,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/zaherg/php72-swoole.svg)](https://hub.docker.com/r/zaherg/php72-swoole/) [![](https://images.microbadger.com/badges/image/zaherg/php72-swoole.svg)](https://microbadger.com/images/zaherg/php72-swoole "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/zaherg/php72-swoole.svg)](https://microbadger.com/images/zaherg/php72-swoole "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/zaherg/php72-swoole.svg)](https://microbadger.com/images/zaherg/php72-swoole "Get your own commit badge on microbadger.com")
 
 
+_PS_: Sadly I had to remove xDebug as swoole wont work if xDebug is installed and enabled
+
 ## Image description
 
-This image contain php-7.2 based on alpine with xDebug, MySQL, PostgreSQL, Redis, GD, [Swoole](https://www.swoole.co.uk/#get-started) enabled and Composer already installed
+This image contain php-7.2 based on alpine with MySQL, PostgreSQL, Redis, GD, [Swoole](https://www.swoole.co.uk/#get-started) enabled and Composer already installed
 
 ## Runing the image:
-
-By default xdebug is enabled, to disable it you need to create a `.env` file which should contain the following variables, but remember to change the value based one what you want to achieve:
-
-```
-PHP_XDEBUG_DEFAULT_ENABLE=0
-PHP_XDEBUG_REMOTE_ENABLE=0
-PHP_XDEBUG_REMOTE_HOST=127.0.0.1
-PHP_XDEBUG_REMOTE_PORT=9001
-PHP_XDEBUG_REMOTE_AUTO_START=0
-PHP_XDEBUG_REMOTE_CONNECT_BACK=0
-PHP_XDEBUG_IDEKEY=docker
-PHP_XDEBUG_PROFILER_ENABLE=0
-PHP_XDEBUG_PROFILER_OUTPUT_DIR=/tmp
-```
 
 Then run the docker and specify the env file that you have created like this
 
@@ -69,16 +57,11 @@ It has the following modules:
 1. standard 
 1. swoole
 1. tokenizer  
-1. xdebug 
 1. xml  
 1. xmlreader  
 1. xmlwriter  
 1. zip  
 1. zlib 
-
-[Zend Modules]
-
-1. Xdebug
 
 ## GD information
 
